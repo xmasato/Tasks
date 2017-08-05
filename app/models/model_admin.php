@@ -11,10 +11,8 @@ class Model_Admin extends app\core\Model {
         // toogle для "Задача сделана"
         if(!$done) {
             $sqlInsert = "UPDATE `tasks` SET `done` = '1' WHERE `{$this->table}`.`id` = {$id}";
-            echo 'false';
         } else {
             $sqlInsert = "UPDATE `tasks` SET `done` = '0' WHERE `{$this->table}`.`id` = {$id}";
-            echo 'true';
         }
 
         $this->pdo->execute($sqlInsert);
